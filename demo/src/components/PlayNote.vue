@@ -12,8 +12,17 @@
       <br />
       <input type="range" v-model="note_frequency" :id="note_frequency_text" min="20" max="2000" />
     </label>
-
-    <button @click="playNote()">{{ play_button_text }}</button>
+    <span class="relative inline-flex">
+      <button @click="playNote()">
+        <span> {{ play_button_text }}</span>
+        <span v-if="is_playing" class="absolute top-0 right-0 -mt-1 -mr-1 flex size-3">
+          <span
+            class="absolute h-full w-full animate-ping rounded-full bg-[var(--caret-color)] opacity-75"
+          ></span>
+          <span class="relative size-3 rounded-full bg-[var(--main-color)]"></span>
+        </span>
+      </button>
+    </span>
 
     <label :for="volume_text">
       {{ volume_text }}
@@ -33,7 +42,7 @@ const note_frequency_text = 'Frequency'
 const np = new notePlayer()
 
 const is_playing = ref(false)
-const play_button_text = computed(() => (!is_playing.value ? 'Start note' : '🔊 Playing note...'))
+const play_button_text = computed(() => (!is_playing.value ? 'Play note' : '🔊 Playing note...'))
 
 function playNote() {
   if (!is_playing.value) {
@@ -46,7 +55,7 @@ function playNote() {
 }
 
 watch(note_frequency, () => {
-  np.setFrequency(note_frequency.value) // set frequency
+  np.setFrequency(note_frequency.value)
 })
 
 const volume = ref(50)
