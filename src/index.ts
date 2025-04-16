@@ -1,4 +1,4 @@
-export class notePlayer {
+export default class notePlayer {
   private audioCtx: AudioContext;
   private gainNode: GainNode;
   private oscillator: OscillatorNode;

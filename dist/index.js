@@ -42,5 +42,5 @@ var notePlayer = class {
   }
 };
 export {
-  notePlayer
+  notePlayer as default
 };

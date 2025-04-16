@@ -12,4 +12,4 @@ declare class notePlayer {
     stop(): void;
 }
 
-export { notePlayer };
+export { notePlayer as default };

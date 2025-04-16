@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { notePlayer } from 'noteplayer'
+import notePlayer from 'noteplayer'
 import { computed, ref, watch } from 'vue'
 
 const note_frequency = ref(440)
