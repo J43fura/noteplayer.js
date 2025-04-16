@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import PlayNote from '../components/PlayNote.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <PlayNote />
   </main>
 </template>
