@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/J43fura/noteplayer.js.git"
   },
-  "keywords": ["music", "note", "player", "audio"],
+  "keywords": ["music", "note", "player", "audio", "WebAudio"],
   "author": "J43fura",
   "license": "ISC",
   "bugs": {
