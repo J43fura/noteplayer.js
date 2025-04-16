@@ -1,19 +1,28 @@
 {
   "name": "noteplayer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./dist/ index.js",
   "types": "./dist/index.d.ts",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "build": "tsup"
   },
-  "files":["dist","README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/J43fura/noteplayer.js.git"
   },
-  "keywords": ["music", "note", "player", "audio", "WebAudio"],
+  "keywords": [
+    "music",
+    "note",
+    "player",
+    "audio",
+    "WebAudio"
+  ],
   "author": "J43fura",
   "license": "ISC",
   "bugs": {
@@ -24,4 +33,4 @@
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   }
-} 
+}

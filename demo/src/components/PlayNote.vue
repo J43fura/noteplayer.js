@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { getAudioContext } from 'noteplayer'
 import { computed, ref, watch } from 'vue'
-import { getAudioContext } from '../../../src/index'
 
 const note_frequency = ref(440)
 const note_frequency_text = 'Frequency'
