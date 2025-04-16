@@ -33,7 +33,7 @@ export default class notePlayer {
     );
   }
   setGain(gain: number) {
-    this.gainNode.gain.setValueAtTime(gain, this.audioCtx.currentTime);
+    this.gainNode.gain.value = gain;
   }
 
   play(frequency?: number) {

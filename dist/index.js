@@ -29,7 +29,7 @@ var notePlayer = class {
     );
   }
   setGain(gain) {
-    this.gainNode.gain.setValueAtTime(gain, this.audioCtx.currentTime);
+    this.gainNode.gain.value = gain;
   }
   play(frequency) {
     if (frequency) {
