@@ -22,7 +22,11 @@
     "note",
     "player",
     "audio",
-    "WebAudio"
+    "WebAudio",
+    "tone",
+    "synth",
+    "generator",
+    "tuner"
   ],
   "author": "J43fura",
   "license": "ISC",
