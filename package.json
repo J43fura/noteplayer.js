@@ -6,7 +6,8 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "files": [
     "dist",
