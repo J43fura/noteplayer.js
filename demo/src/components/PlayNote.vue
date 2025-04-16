@@ -24,45 +24,34 @@
 </template>
 
 <script setup lang="ts">
-import { getAudioContext } from 'noteplayer'
+import { notePlayer } from 'noteplayer'
 import { computed, ref, watch } from 'vue'
 
 const note_frequency = ref(440)
 const note_frequency_text = 'Frequency'
 
+const np = new notePlayer()
+
 const is_playing = ref(false)
 const play_button_text = computed(() => (!is_playing.value ? 'Start note' : '🔊 Playing note...'))
-
-// create web audio api context
-// const audioCtx = new AudioContext()
-
-const audioCtx = getAudioContext()
-
-// create Oscillator node
-const oscillator = audioCtx.createOscillator()
-oscillator.type = 'sine'
-
-const gainNode = audioCtx.createGain()
-oscillator.connect(gainNode)
-oscillator.start()
 
 function playNote() {
   if (!is_playing.value) {
     is_playing.value = true
-    gainNode.connect(audioCtx.destination)
+    np.play()
   } else {
-    gainNode.disconnect(audioCtx.destination)
     is_playing.value = false
+    np.stop()
   }
 }
 
 watch(note_frequency, () => {
-  oscillator.frequency.setValueAtTime(note_frequency.value, audioCtx.currentTime)
+  np.setFrequency(note_frequency.value) // set frequency
 })
 
 const volume = ref(50)
 const volume_text = 'Volume'
 watch(volume, () => {
-  gainNode.gain.value = volume.value / 100
+  np.setGain(volume.value / 100)
 })
 </script>
