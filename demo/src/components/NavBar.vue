@@ -4,7 +4,7 @@
     <div class="group relative mx-auto mt-4 size-[64px]" alt="Note Player Logo">
       <!-- Default logo -->
       <img
-        src="/NotePlayer_logo_2.png"
+        src="/NotePlayer_logo_3.png"
         class="absolute opacity-100 transition-opacity duration-300 group-hover:opacity-0"
       />
 
