@@ -1,3 +1,5 @@
+@plugin '@iconify/tailwind4';
+
 @import 'tailwindcss';
 @import './hanok.css';
 
@@ -42,7 +44,6 @@ input[type='range'] {
   outline: none;
   border: 0px;
 }
-
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -52,7 +53,20 @@ input[type='range']::-webkit-slider-thumb {
   background: var(--sub-color);
   cursor: pointer;
 }
-
 input[type='range']::-webkit-slider-thumb:hover {
   background: var(--text-color);
+}
+
+select {
+  background: var(--sub-alt-color);
+  padding: 0.5rem;
+  transition:
+    background 0.125s,
+    color 0.125s,
+    opacity 0.125s;
+}
+select:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  cursor: pointer;
 }
