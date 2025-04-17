@@ -32,8 +32,8 @@
 
     <label :for="oscillator_types_text">
       {{ oscillator_types_text }}
-      <select v-model="oscillatorType" :id="oscillator_types_text">
-        <option :key="index" v-for="(type, index) in oscillatorTypes" :value="type">
+      <select v-model="oscillator_type" :id="oscillator_types_text">
+        <option :key="index" v-for="(type, index) in oscillator_types" :value="type">
           {{ type }}
         </option>
       </select>
@@ -74,10 +74,10 @@ watch(volume, () => {
 })
 
 const oscillator_types_text = 'Oscillator types'
-const oscillatorTypes: Ref<OscillatorType[]> = ref(['sawtooth', 'sine', 'square', 'triangle'])
-const oscillatorType = ref(oscillatorTypes.value[2])
+const oscillator_types: Ref<OscillatorType[]> = ref(['sawtooth', 'sine', 'square', 'triangle'])
+const oscillator_type = ref(oscillator_types.value[2])
 
-watch(oscillatorType, () => {
-  np.setOscillatorType(oscillatorType.value)
+watch(oscillator_type, () => {
+  np.setOscillatorType(oscillator_type.value)
 })
 </script>
