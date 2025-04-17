@@ -29,12 +29,21 @@
       <input :id="volume_text" type="range" v-model="volume" min="0" max="100" />
       {{ volume }}%
     </label>
+
+    <label :for="oscillator_types_text">
+      {{ oscillator_types_text }}
+      <select v-model="oscillatorType" :id="oscillator_types_text">
+        <option :key="index" v-for="(type, index) in oscillatorTypes" :value="type">
+          {{ type }}
+        </option>
+      </select>
+    </label>
   </div>
 </template>
 
 <script setup lang="ts">
 import notePlayer from 'noteplayer'
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watch, type Ref } from 'vue'
 
 const note_frequency = ref(440)
 const note_frequency_text = 'Frequency'
@@ -62,5 +71,13 @@ const volume = ref(50)
 const volume_text = 'Volume'
 watch(volume, () => {
   np.setGain(volume.value / 100)
+})
+
+const oscillator_types_text = 'Oscillator types'
+const oscillatorTypes: Ref<OscillatorType[]> = ref(['sawtooth', 'sine', 'square', 'triangle'])
+const oscillatorType = ref(oscillatorTypes.value[2])
+
+watch(oscillatorType, () => {
+  np.setOscillatorType(oscillatorType.value)
 })
 </script>
