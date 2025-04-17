@@ -3,6 +3,7 @@ export default class notePlayer {
   private gainNode: GainNode;
   private oscillator: OscillatorNode;
   private DEFAULT_FREQUENCY = 440;
+  private DEFAULT_OSCILLATOR_TYPE: OscillatorType = "sine";
   constructor() {
     this.audioCtx = new AudioContext();
 
@@ -20,7 +21,7 @@ export default class notePlayer {
       this.DEFAULT_FREQUENCY,
       this.audioCtx.currentTime
     );
-    this.oscillator.type = "sine";
+    this.oscillator.type = this.DEFAULT_OSCILLATOR_TYPE;
   }
 
   setOscillatorType(type: OscillatorType) {

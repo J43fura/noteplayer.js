@@ -3,6 +3,7 @@ declare class notePlayer {
     private gainNode;
     private oscillator;
     private DEFAULT_FREQUENCY;
+    private DEFAULT_OSCILLATOR_TYPE;
     constructor();
     private setOscillatorDefaultSettings;
     setOscillatorType(type: OscillatorType): void;
