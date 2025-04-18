@@ -29,10 +29,15 @@
       <input :id="volume_text" type="range" v-model="volume" min="0" max="100" />
       {{ volume }}%
     </label>
+    <label :for="oscillator_type_text" class="align-middle">
+      {{ oscillator_type_text }}
 
-    <label :for="oscillator_types_text">
-      {{ oscillator_types_text }}
-      <select v-model="oscillator_type" :id="oscillator_types_text">
+      <span
+        class="hidden icon-[ph--wave-sine] icon-[ph--wave-sine-duotone] hidden icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth-duotone] icon-[ph--wave-square] icon-[ph--wave-square-duotone] icon-[ph--wave-triangle] icon-[ph--wave-triangle-duotone]"
+      ></span>
+
+      <span class="align-middle mr-1" :class="oscillator_icon"></span>
+      <select v-model="oscillator_type" :id="oscillator_type_text">
         <option :key="index" v-for="(type, index) in oscillator_types" :value="type">
           {{ type }}
         </option>
@@ -43,7 +48,7 @@
 
 <script setup lang="ts">
 import notePlayer from 'noteplayer'
-import { computed, ref, watch, type Ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const note_frequency = ref(440)
 const note_frequency_text = 'Frequency'
@@ -73,10 +78,12 @@ watch(volume, () => {
   np.setGain(volume.value / 100)
 })
 
-const oscillator_types_text = 'Oscillator types'
-const oscillator_types: Ref<OscillatorType[]> = ref(['sawtooth', 'sine', 'square', 'triangle'])
-const oscillator_type = ref(oscillator_types.value[2])
-
+const oscillator_types = ref<OscillatorType[]>(['sawtooth', 'sine', 'square', 'triangle'])
+const oscillator_type = ref<OscillatorType>('sine')
+const oscillator_type_text = 'Oscillator type'
+const oscillator_icon = computed(
+  () => `icon-[ph--wave-${oscillator_type.value}${is_playing.value ? '-duotone' : ''}]`,
+)
 watch(oscillator_type, () => {
   np.setOscillatorType(oscillator_type.value)
 })
