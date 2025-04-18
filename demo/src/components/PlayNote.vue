@@ -31,11 +31,6 @@
     </label>
     <label :for="oscillator_type_text" class="align-middle">
       {{ oscillator_type_text }}
-
-      <span
-        class="hidden icon-[ph--wave-sine] icon-[ph--wave-sine-duotone] hidden icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth-duotone] icon-[ph--wave-square] icon-[ph--wave-square-duotone] icon-[ph--wave-triangle] icon-[ph--wave-triangle-duotone]"
-      ></span>
-
       <span class="align-middle mr-1" :class="oscillator_icon"></span>
       <select v-model="oscillator_type" :id="oscillator_type_text">
         <option :key="index" v-for="(type, index) in oscillator_types" :value="type">
@@ -44,6 +39,10 @@
       </select>
     </label>
   </div>
+
+  <!-- load icons workaround:
+    icon-[ph--wave-sine] icon-[ph--wave-sine-duotone] icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth-duotone] icon-[ph--wave-square] icon-[ph--wave-square-duotone] icon-[ph--wave-triangle] icon-[ph--wave-triangle-duotone]
+  -->
 </template>
 
 <script setup lang="ts">
