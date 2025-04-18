@@ -1,5 +1,22 @@
 <template>
   <div class="flex flex-col items-center gap-4 pt-8 text-center">
+    <label :for="a4_note_frequency_text">
+      {{ a4_note_frequency_text }}
+      <br />
+      <input
+        :id="a4_note_frequency_text"
+        v-model="a4_note_frequency"
+        type="number"
+        :placeholder="a4_note_frequency_text"
+      />
+    </label>
+
+    <label :for="note_name_text">
+      {{ note_name_text }}
+      <br />
+      <input :id="note_name_text" v-model="note_name" type="text" :placeholder="note_name_text" />
+    </label>
+
     <label :for="note_frequency_text">
       {{ note_frequency_text }}
       <br />
@@ -82,4 +99,10 @@ const oscillator_icon = computed(
 watch(oscillator_type, () => {
   np.setOscillatorType(oscillator_type.value)
 })
+
+const a4_note_frequency = ref(440)
+const a4_note_frequency_text = 'A4 Frequency'
+
+const note_name = ref('A4')
+const note_name_text = 'Note name'
 </script>
