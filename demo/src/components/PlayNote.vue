@@ -39,10 +39,6 @@
       </select>
     </label>
   </div>
-
-  <!-- load icons workaround:
-    icon-[ph--wave-sine] icon-[ph--wave-sine-duotone] icon-[ph--wave-sawtooth] icon-[ph--wave-sawtooth-duotone] icon-[ph--wave-square] icon-[ph--wave-square-duotone] icon-[ph--wave-triangle] icon-[ph--wave-triangle-duotone]
-  -->
 </template>
 
 <script setup lang="ts">

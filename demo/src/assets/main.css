@@ -3,6 +3,8 @@
 @import 'tailwindcss';
 @import './hanok.css';
 
+@source inline('icon-[ph--wave-{sine,sawtooth,square,triangle}{-duotone,}]');
+
 body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
