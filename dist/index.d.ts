@@ -8,6 +8,7 @@ declare class notePlayer {
     private CONCERT_PITCH_OCTAVE;
     private temperament;
     private noteNames;
+    private noteNameRegex;
     constructor();
     setOscillatorDefaultSettings(): void;
     setOscillatorType(type: OscillatorType): void;
@@ -20,10 +21,13 @@ declare class notePlayer {
     getFrenquencyFromSteps(steps: number): number;
     getStepsFromFrequency(frequency: number): number;
     getNoteNameFromSteps(steps: number): string;
+    getLowestStep(): number;
+    getLowestFrequency(): number;
     getLowestMetrics(): {
-        steps: number;
+        step: number;
         frequency: number;
     };
+    getFrequencyFromNoteName(noteFullName: string): number;
 }
 
 export { notePlayer as default };

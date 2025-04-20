@@ -73,7 +73,7 @@
           <br />
           <input
             type="range"
-            v-model="steps"
+            v-model.number="steps"
             :id="steps_text"
             :min="MIN_STEPS"
             :max="MAX_STEPS"
@@ -196,7 +196,7 @@ function updateLowestMetrics() {
   lowest_metrics.value = np.getLowestMetrics()
 }
 const MIN_FREQEUNCY = computed(() => lowest_metrics.value.frequency)
-const MIN_STEPS = computed(() => lowest_metrics.value.steps)
+const MIN_STEPS = computed(() => lowest_metrics.value.step)
 const MAX_FREQEUNCY = 20000
 const MAX_STEPS = np.getStepsFromFrequency(MAX_FREQEUNCY)
 
@@ -211,9 +211,12 @@ watch(temperament, () => {
 
 const note_name_text = 'Note name'
 const note_name = ref('A4')
+watch(note_name, () => {
+  note_frequency.value = np.getFrequencyFromNoteName(note_name.value)
+})
 
 const steps_text = 'Steps'
-const steps = ref(0)
+const steps = ref<number>(0)
 watch(steps, () => {
   note_frequency.value = np.getFrenquencyFromSteps(steps.value)
   note_name.value = np.getNoteNameFromSteps(steps.value)
