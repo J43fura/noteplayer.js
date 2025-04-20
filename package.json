@@ -1,5 +1,5 @@
 {
-  "name": "noteplayer",
+  "name": "noteplayer.js",
   "version": "0.0.5",
   "description": "",
   "main": "./dist/ index.js",
