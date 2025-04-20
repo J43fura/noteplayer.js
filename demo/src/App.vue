@@ -7,7 +7,7 @@ import NavBar from './components/NavBar.vue'
   <header>
     <NavBar />
   </header>
-  <body>
+  <body class="flex flex-col items-center text-center pt-8 gap-4">
     <RouterView />
   </body>
 </template>
