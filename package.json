@@ -1,7 +1,7 @@
 {
   "name": "noteplayer.js",
-  "version": "0.0.5",
-  "description": "",
+  "version": "0.0.6",
+  "description": "Play, tune, and transform notes and frequencies in a snap!",
   "main": "./dist/ index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
