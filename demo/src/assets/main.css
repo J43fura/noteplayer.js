@@ -72,3 +72,19 @@ select:hover {
   color: var(--bg-color);
   cursor: pointer;
 }
+
+.bordered {
+  border: 4px solid var(--sub-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  gap: calc(var(--spacing) * 4);
+}
+
+[disabled] {
+  opacity: 0.5;
+}
+
+hr {
+  color: var(--sub-color);
+  border-top-width: 2px;
+}

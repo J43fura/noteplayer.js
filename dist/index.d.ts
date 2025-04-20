@@ -4,13 +4,26 @@ declare class notePlayer {
     private oscillator;
     private DEFAULT_FREQUENCY;
     private DEFAULT_OSCILLATOR_TYPE;
+    private concert_pitch;
+    private CONCERT_PITCH_OCTAVE;
+    private temperament;
+    private noteNames;
     constructor();
-    private setOscillatorDefaultSettings;
+    setOscillatorDefaultSettings(): void;
     setOscillatorType(type: OscillatorType): void;
     setFrequency(frequency: number): void;
     setGain(gain: number): void;
     play(frequency?: number): void;
     stop(): void;
+    setTemperament(temperament: number): void;
+    setConcertPitch(concert_pitch: number): void;
+    getFrenquencyFromSteps(steps: number): number;
+    getStepsFromFrequency(frequency: number): number;
+    getNoteNameFromSteps(steps: number): string;
+    getLowestMetrics(): {
+        steps: number;
+        frequency: number;
+    };
 }
 
 export { notePlayer as default };

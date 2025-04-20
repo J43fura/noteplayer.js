@@ -7,7 +7,8 @@
   "type": "module",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "demo": "cd demo && npm run dev"
   },
   "files": [
     "dist",

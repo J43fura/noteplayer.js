@@ -5,6 +5,26 @@ var notePlayer = class {
   oscillator;
   DEFAULT_FREQUENCY = 440;
   DEFAULT_OSCILLATOR_TYPE = "sine";
+  concert_pitch = 440;
+  // based on A4
+  CONCERT_PITCH_OCTAVE = 4;
+  // based on A4
+  temperament = 12;
+  noteNames = [
+    "A",
+    "A#",
+    "B",
+    "C",
+    "C#",
+    "D",
+    "D#",
+    "E",
+    "F",
+    "F#",
+    "G",
+    "G#"
+  ];
+  // Based on Chromatic scale (12-TET) only, TODO: auto detect notes based on temperament
   constructor() {
     this.audioCtx = new AudioContext();
     this.gainNode = this.audioCtx.createGain();
@@ -40,6 +60,30 @@ var notePlayer = class {
   }
   stop() {
     this.gainNode.disconnect(this.audioCtx.destination);
+  }
+  setTemperament(temperament) {
+    this.temperament = temperament;
+  }
+  setConcertPitch(concert_pitch) {
+    this.concert_pitch = concert_pitch;
+  }
+  getFrenquencyFromSteps(steps) {
+    const frequency = 2 ** (steps / this.temperament) * this.concert_pitch;
+    return frequency;
+  }
+  getStepsFromFrequency(frequency) {
+    const steps = this.temperament * Math.log2(frequency / this.concert_pitch);
+    return Math.round(steps);
+  }
+  getNoteNameFromSteps(steps) {
+    const octave = Math.floor(steps / this.temperament) + this.CONCERT_PITCH_OCTAVE;
+    let noteIndex = (steps >= 0 ? steps : Math.abs(this.noteNames.length + steps)) % this.temperament;
+    return `${this.noteNames[noteIndex]}${octave}`;
+  }
+  getLowestMetrics() {
+    const steps = -this.temperament * this.CONCERT_PITCH_OCTAVE;
+    const frequency = this.getFrenquencyFromSteps(steps);
+    return { steps, frequency };
   }
 };
 export {
