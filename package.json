@@ -28,8 +28,7 @@
     "synth",
     "generator",
     "tuner",
-    "pitch",
-    "tuner"
+    "pitch"
   ],
   "author": "J43fura",
   "license": "ISC",
