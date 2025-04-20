@@ -1,6 +1,6 @@
 {
   "name": "noteplayer",
-  "version": "0.4.1",
+  "version": "0.0.5",
   "description": "",
   "main": "./dist/ index.js",
   "types": "./dist/index.d.ts",
@@ -28,7 +28,8 @@
     "synth",
     "generator",
     "tuner",
-    "pitch"
+    "pitch",
+    "tuner"
   ],
   "author": "J43fura",
   "license": "ISC",
