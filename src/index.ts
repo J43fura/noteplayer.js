@@ -80,7 +80,6 @@ export default class notePlayer {
     const steps = this.temperament * Math.log2(frequency / this.concert_pitch);
     return Math.round(steps);
   }
-
   getNoteNameFromSteps(steps: number) {
     const octave =
       Math.floor(steps / this.temperament) + this.CONCERT_PITCH_OCTAVE;
@@ -90,31 +89,13 @@ export default class notePlayer {
       this.temperament;
     return `${this.noteNames[noteIndex]}${octave}`;
   }
-
-  getLowestStep() {
-    const step = -this.temperament * this.CONCERT_PITCH_OCTAVE;
-    return step;
-  }
-  getLowestFrequency() {
-    const step = this.getLowestStep();
-    const frequency = this.getFrenquencyFromSteps(step);
-    return frequency;
-  }
-  getLowestMetrics() {
-    return { step: this.getLowestStep(), frequency: this.getLowestFrequency() };
-  }
-
   getFrequencyFromNoteName(noteFullName: string) {
-    console.log("Incoming noteFullName:", noteFullName);
-
     const match = noteFullName.match(this.noteNameRegex);
-    console.log(noteFullName, match);
     if (!match) {
       throw new Error("Invalid note format");
     }
 
     const [, noteLetter, sharp, octaveStr] = match;
-
     const noteName = `${noteLetter}${sharp}`;
     const octave = Number(octaveStr);
 
@@ -128,5 +109,17 @@ export default class notePlayer {
     const steps = this.getLowestStep() + stepsFromOctave + stepsBase;
     const frequency = this.getFrenquencyFromSteps(steps);
     return frequency;
+  }
+  getLowestStep() {
+    const step = -this.temperament * this.CONCERT_PITCH_OCTAVE;
+    return step;
+  }
+  getLowestFrequency() {
+    const step = this.getLowestStep();
+    const frequency = this.getFrenquencyFromSteps(step);
+    return frequency;
+  }
+  getLowestMetrics() {
+    return { step: this.getLowestStep(), frequency: this.getLowestFrequency() };
   }
 }

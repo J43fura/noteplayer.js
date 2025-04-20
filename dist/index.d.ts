@@ -21,13 +21,13 @@ declare class notePlayer {
     getFrenquencyFromSteps(steps: number): number;
     getStepsFromFrequency(frequency: number): number;
     getNoteNameFromSteps(steps: number): string;
+    getFrequencyFromNoteName(noteFullName: string): number;
     getLowestStep(): number;
     getLowestFrequency(): number;
     getLowestMetrics(): {
         step: number;
         frequency: number;
     };
-    getFrequencyFromNoteName(noteFullName: string): number;
 }
 
 export { notePlayer as default };
