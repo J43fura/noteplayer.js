@@ -1,4 +1,14 @@
-# noteplayer.js
+<div>
+  <div align="center">
+    <img width="90" height="90" src="https://github.com/J43fura/noteplayer.js/blob/main/demo/public/NotePlayer_logo_2.png?raw=true" alt="WikiAdviser Logo">
+  </div>
+  <h1 align="center">noteplayer.js</h1>
+  <div align="center">
+    <p>
+      Play, tune, and transform notes and frequencies in a snap!
+    </p>
+  </div>
+</div>
 
 ```sh
 npm i noteplayer.js
