@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "demo": "cd demo && npm run dev"
+    "demo": "cd demo && npm run dev",
+    "demo:build": "cd demo && npm run build"
   },
   "files": [
     "dist",
