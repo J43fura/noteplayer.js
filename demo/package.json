@@ -41,5 +41,6 @@
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vue-tsc": "^2.2.8"
-  }
+  },
+  "homepage": "https://j43fura.github.io/noteplayer.js"
 }
