@@ -17,5 +17,5 @@ export default defineConfig({
     },
     preserveSymlinks: true,
   },
-  base: '/noteplayer.js',
+  base: '/noteplayer.js/',
 })
