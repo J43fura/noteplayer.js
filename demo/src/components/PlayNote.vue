@@ -139,7 +139,8 @@
 </template>
 
 <script setup lang="ts">
-import notePlayer from 'noteplayer'
+// import notePlayer from 'noteplayer' // uncomment and use "npm run link" to use the local version
+import notePlayer from 'noteplayer.js'
 import { computed, ref, watch } from 'vue'
 
 const note_frequency = ref(440)

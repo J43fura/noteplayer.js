@@ -13,9 +13,11 @@
 ```sh
 npm i noteplayer.js
 ```
+
 Example usage
+
 ```js
-import notePlayer from 'noteplayer'
+import notePlayer from "noteplayer.js";
 const np = new notePlayer();
 
 np.setFrequency(440); // Sets frequency
@@ -24,6 +26,7 @@ np.stop(); // Stops note
 ```
 
 Functions
+
 ```js
 setOscillatorDefaultSettings(): void;
 setOscillatorType(type: OscillatorType): void;
@@ -48,3 +51,4 @@ getLowestMetrics(): {
     step: number;
     frequency: number;
 };
+```
