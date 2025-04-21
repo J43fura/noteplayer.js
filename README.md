@@ -7,6 +7,9 @@
     <p>
       Play, tune, and transform notes and frequencies in a snap!
     </p>
+    <p>
+      Live demo at https://j43fura.github.io/noteplayer.js/
+    </p>
   </div>
 </div>
 
