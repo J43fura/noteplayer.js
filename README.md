@@ -1,6 +1,6 @@
 <div>
   <div align="center">
-    <img width="90" height="90" src="https://github.com/J43fura/noteplayer.js/blob/main/demo/public/NotePlayer_logo_2.png?raw=true" alt="WikiAdviser Logo">
+    <img width="90" height="90" src="https://github.com/J43fura/noteplayer.js/blob/main/demo/public/noteplayer_icon.png?raw=true" alt="noteplayer.js Logo">
   </div>
   <h1 align="center">noteplayer.js</h1>
   <div align="center">
