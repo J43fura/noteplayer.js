@@ -112,7 +112,7 @@
 
           <span v-if="is_playing" class="absolute top-0 right-0 -mt-1 -mr-1 flex size-3">
             <span
-              class="absolute h-full w-full animate-ping rounded-full bg-[var(--caret-color)] opacity-75"
+              class="absolute h-full w-full animate-ping rounded-full bg-[var(--main-color)] opacity-75"
             ></span>
             <span class="relative size-3 rounded-full bg-[var(--main-color)]"></span>
           </span>
