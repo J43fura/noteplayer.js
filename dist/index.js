@@ -32,6 +32,8 @@ var notePlayer = class {
     this.oscillator = this.audioCtx.createOscillator();
     this.oscillator.connect(this.gainNode);
     this.setOscillatorDefaultSettings();
+  }
+  init() {
     this.oscillator.start();
   }
   setOscillatorDefaultSettings() {

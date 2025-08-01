@@ -10,6 +10,7 @@ declare class notePlayer {
     private noteNames;
     private noteNameRegex;
     constructor();
+    init(): void;
     setOscillatorDefaultSettings(): void;
     setOscillatorType(type: OscillatorType): void;
     setFrequency(frequency: number): void;

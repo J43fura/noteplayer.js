@@ -150,8 +150,12 @@ const np = new notePlayer()
 
 const is_playing = ref(false)
 const play_button_text = computed(() => (!is_playing.value ? 'Play note' : 'Playing note...'))
-
+const np_initialized = ref(false)
 function playNote() {
+  if (!np_initialized.value) {
+    np.init()
+    np_initialized.value = true
+  }
   if (!is_playing.value) {
     is_playing.value = true
     np.play()
