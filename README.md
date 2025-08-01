@@ -23,6 +23,7 @@ Example usage
 import notePlayer from "noteplayer.js";
 const np = new notePlayer();
 
+np.init();
 np.setFrequency(440); // Sets frequency
 np.play(); // Plays note
 np.stop(); // Stops note
@@ -31,6 +32,8 @@ np.stop(); // Stops note
 Functions
 
 ```js
+init(): void;
+
 setOscillatorDefaultSettings(): void;
 setOscillatorType(type: OscillatorType): void;
 

@@ -32,6 +32,9 @@ export default class notePlayer {
     this.oscillator.connect(this.gainNode);
 
     this.setOscillatorDefaultSettings();
+  }
+
+  init() {
     this.oscillator.start();
   }
 
